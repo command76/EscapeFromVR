@@ -4,7 +4,7 @@ using System.Collections;
 public class HeadSphereControl : MonoBehaviour
 {
     public Animator anim;
-
+    public static bool areGlassesEquiped;
     void Start()
     {
         anim = GetComponent<Animator>();        
@@ -23,9 +23,29 @@ public class HeadSphereControl : MonoBehaviour
     public void CollapseSphere()
         {
         anim.Play("HeadSphereCollapseInward"); 
+        TakeOffGlasses();
         }
     public void InflateSphere()
         {
         anim.Play("HeadSphereSpreadOut"); 
+        EquipGlasses();
         }
+    void EquipGlasses()
+    {
+        Debug.Log("Equipped glases");
+        makeGlassesTrue();
+    }
+    void TakeOffGlasses()
+    {
+        Debug.Log("Took off glases");
+        makeGlassesFalse();
+    }
+    void makeGlassesFalse()
+    {
+        areGlassesEquiped = false;
+    }
+    void makeGlassesTrue()
+    {
+        areGlassesEquiped = true;
+    }
 }
