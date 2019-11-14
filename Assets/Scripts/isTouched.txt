@@ -1,0 +1,10 @@
+using UnityEngine;
+using System.Collections;
+
+public class isTouched : MonoBehaviour
+
+    public void OnTriggerEnter()
+    {
+      Debug.Log("button1");  
+    }
+}

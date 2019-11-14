@@ -7,7 +7,7 @@ public class HeadSphereControl : MonoBehaviour
     public static bool areGlassesEquiped;
     void Start()
     {
-        anim = GetComponent<Animator>();        
+        anim = GetComponent<Animator>();       
     }
     void Update()
     {
