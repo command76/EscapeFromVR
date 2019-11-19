@@ -10,7 +10,7 @@ public class TouchButton : MonoBehaviour
     // Start is called before the first frame update
     //public int[] buttons2;
     public List<int> buttons = new List<int>();
-    private static int[] correctCombo = { 1, 1, 1, 1, 1, 1 };
+    private static int[] correctCombo = { 1, 7, 6, 2, 3, 5 };
     void Start()
     {
 
