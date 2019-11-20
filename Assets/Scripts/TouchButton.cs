@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TouchButton : MonoBehaviour
 {
+    public AudioSource audioData;
     public AudioSource audioData2;
     public AudioSource audioData3;
     public SafeControl other;
@@ -29,6 +30,7 @@ public class TouchButton : MonoBehaviour
     public void SafeLogic(int buttonNum){
 
         buttons.Add(buttonNum);
+        audioData.Play();
         //buttons [count] = buttonNum;
         //count++;
         Debug.Log(buttons.Count);
