@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TouchButton : MonoBehaviour
 {
+    public AudioSource audioData2;
+    public AudioSource audioData3;
     public SafeControl other;
     int count = 0;
     // Start is called before the first frame update
@@ -38,11 +40,13 @@ public class TouchButton : MonoBehaviour
                 && (buttons[2] == correctCombo[2]) && (buttons[3] == correctCombo[3])
                 && (buttons[4] == correctCombo[4]) && (buttons[5] == correctCombo[5])){
                 Debug.Log("You did it!");
+                audioData2.Play();
                 other.OpenSafe();
             }
         } 
         if (buttons.Count == 7){
                 buttons.Clear();
+                audioData3.Play();
                // Debug.Log(buttons[0]);
                // count = 0;
             }

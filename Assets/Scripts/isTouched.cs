@@ -14,10 +14,11 @@ public class isTouched : MonoBehaviour
  private bool hasntPlayedYet;
 private float buttonDelayTime = 0.7f;
 private bool buttonPressed = false;
+AudioSource audioData;
 
     void start()
     {
-
+    audioData = GetComponent<AudioSource>();
     }
    void OnTriggerEnter(Collider otherobj)
     {
@@ -38,6 +39,7 @@ private bool buttonPressed = false;
                     other.SafeLogic(buttonNum); 
                     buttonPressed = true;
                 }
+                audioData.Play();
                 StartCoroutine(ButtonDelay()); 
             }
         }
