@@ -13,11 +13,11 @@ public class SafeControl : MonoBehaviour
     {
         if (Input.GetKeyDown("u"))
         {
-            OpenSafe();      
+            //OpenSafe();      
         }   
     }
     public void OpenSafe()
         {
-        anim.Play("SafeDoorOpen"); 
+        //anim.Play("SafeDoorOpen"); 
         }  
 }

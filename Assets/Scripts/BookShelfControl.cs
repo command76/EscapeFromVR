@@ -13,16 +13,16 @@ public class BookShelfControl : MonoBehaviour
     {
         if (Input.GetButtonDown("VRTK_Axis9_LeftTrigger"))
         {
-            RetractBookShelf();      
+           // RetractBookShelf();      
         }   
         if (Input.GetKeyDown("i"))
         {
-            RetractBookShelf();   
+            //RetractBookShelf();   
         }    
     }
     public void RetractBookShelf()
         {
-        anim.Play("BookShelfRetract"); 
+        //anim.Play("BookShelfRetract"); 
         }  
 }
 

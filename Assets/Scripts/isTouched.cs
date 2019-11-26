@@ -29,12 +29,12 @@ private bool buttonPressed = false;
                 {
                     transform.localPosition = new Vector3( transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 0.009f);
                     Debug.Log("button" + buttonNum); 
-                    other.SafeLogic(buttonNum);
+                    other.SafeLogic(buttonNum, opensBookShelf);
                     buttonPressed = true;
                 }else if(YAxis){
                     transform.localPosition = new Vector3( transform.localPosition.x, transform.localPosition.y - 0.009f, transform.localPosition.z);
                     Debug.Log("button" + buttonNum); 
-                    other.SafeLogic(buttonNum); 
+                    other.SafeLogic(buttonNum, opensBookShelf); 
                     buttonPressed = true;
                 }
                 StartCoroutine(ButtonDelay()); 
