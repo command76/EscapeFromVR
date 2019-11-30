@@ -10,6 +10,8 @@ public class TouchButton : MonoBehaviour
     public AudioSource audioData3;
     public SafeControl other;
     public GameObject labButton;
+    public GameObject[] allButtons;
+    private float ResetDelayer = 0.9f;
     int count = 0;
     // Start is called before the first frame update
     //public int[] buttons2;
@@ -43,7 +45,7 @@ public class TouchButton : MonoBehaviour
                
             
         
-        if (buttons.Count == 6 && Bookshelf == false){
+        if (buttons.Count >= 6 && Bookshelf == false){
             if ((buttons[0] == correctCombo[0]) && (buttons[1] == correctCombo[1])
                 && (buttons[2] == correctCombo[2]) && (buttons[3] == correctCombo[3])
                 && (buttons[4] == correctCombo[4]) && (buttons[5] == correctCombo[5])){
@@ -52,14 +54,22 @@ public class TouchButton : MonoBehaviour
                 labButton.SetActive(true);
                 other.OpenSafe();
             }
-        } 
-        if (buttons.Count == 7 && Bookshelf == false){
+             if (buttons.Count == 7 && Bookshelf == false){
                 buttons.Clear();
                 audioData3.Play();
-               // Debug.Log(buttons[0]);
-               // count = 0;
-            }
-          
+                StartCoroutine(ResetDelay()); 
+            } 
+        }
+
+    IEnumerator ResetDelay()
+        {
+            yield return new WaitForSeconds(ResetDelayer);
+                foreach (GameObject emission in allButtons)
+                {
+                    emission.GetComponent<Renderer>().material.DisableKeyword("_EMISSION"); 
+                }
+        }
+        
     
      Debug.Log("buttonNum is " + buttonNum);
      Debug.Log("buttons array length is " + buttons.Count);

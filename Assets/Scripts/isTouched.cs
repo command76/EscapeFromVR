@@ -11,6 +11,7 @@ public class isTouched : MonoBehaviour
  public BookShelfControl ScriptA;
  public bool YAxis;
  public bool opensBookShelf;
+ private int pressedNumber = 0;
  private bool hasntPlayedYet;
 private float buttonDelayTime = 0.7f;
 private bool buttonPressed = false;
@@ -27,17 +28,19 @@ private bool buttonPressed = false;
             if(buttonPressed == false){
                 if(!YAxis)
                 {
+                    
                     transform.localPosition = new Vector3( transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 0.009f);
                     Debug.Log("button" + buttonNum); 
                     other.SafeLogic(buttonNum, opensBookShelf);
                     buttonPressed = true;
+                    gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");                
                 }else if(YAxis){
                     transform.localPosition = new Vector3( transform.localPosition.x, transform.localPosition.y - 0.009f, transform.localPosition.z);
                     Debug.Log("button" + buttonNum); 
                     other.SafeLogic(buttonNum, opensBookShelf); 
                     buttonPressed = true;
                 }
-                StartCoroutine(ButtonDelay()); 
+              StartCoroutine(ButtonDelay()); 
             }
         }
         if(opensBookShelf == true && hasntPlayedYet == false){
@@ -51,7 +54,8 @@ private bool buttonPressed = false;
             if(!YAxis)
             {
                 transform.localPosition = new Vector3( transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + 0.009f);
-                Debug.Log("button" + buttonNum); 
+                Debug.Log("button" + buttonNum);
+
             } else{
                 transform.localPosition = new Vector3( transform.localPosition.x, transform.localPosition.y + 0.009f, transform.localPosition.z);
                 Debug.Log("button" + buttonNum);  

@@ -18,6 +18,6 @@ public class SafeControl : MonoBehaviour
     }
     public void OpenSafe()
         {
-        //anim.Play("SafeDoorOpen"); 
+        anim.Play("SafeDoorOpen"); 
         }  
 }

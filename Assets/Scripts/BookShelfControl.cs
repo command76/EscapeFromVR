@@ -22,7 +22,7 @@ public class BookShelfControl : MonoBehaviour
     }
     public void RetractBookShelf()
         {
-        //anim.Play("BookShelfRetract"); 
+        anim.Play("BookShelfRetract"); 
         }  
 }
 
