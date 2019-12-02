@@ -9,7 +9,7 @@ public class TouchButton : MonoBehaviour
     public AudioSource audioData2;
     public AudioSource audioData3;
     public SafeControl other;
-    public GameObject labButton;
+    //public GameObject labButton;
     public GameObject[] allButtons;
     private float ResetDelayer = 0.9f;
     int count = 0;
@@ -51,7 +51,7 @@ public class TouchButton : MonoBehaviour
                 && (buttons[4] == correctCombo[4]) && (buttons[5] == correctCombo[5])){
                 Debug.Log("You did it!");
                 audioData2.Play();
-                labButton.SetActive(true);
+                //labButton.SetActive(true);
                 other.OpenSafe();
             }
              if (buttons.Count == 7 && Bookshelf == false){
