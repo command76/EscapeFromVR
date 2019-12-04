@@ -11,6 +11,8 @@ public class HeadSphereControl : MonoBehaviour
     public GameObject turnon1;
     public GameObject turnon2;
     public GameObject turnon3;
+    public GameObject turnoff4;
+    public GameObject turnon4;
     public Renderer catPoster;
     public Material CatPosterOrig;
     public Material CatPosterNew;
@@ -72,17 +74,22 @@ public class HeadSphereControl : MonoBehaviour
             turnoff1.SetActive(false);
             turnoff2.SetActive(false);
             turnoff3.SetActive(false);
+            turnoff4.SetActive(false);
             turnon1.SetActive(true);
             turnon2.SetActive(true); 
             turnon3.SetActive(true);
+            turnon4.SetActive(true);
+
             catPoster.material = CatPosterNew;
         }else{
             turnoff1.SetActive(true);
             turnoff2.SetActive(true);
             turnoff3.SetActive(true);
+            turnoff4.SetActive(true);
             turnon1.SetActive(false);
             turnon2.SetActive(false); 
             turnon3.SetActive(false);  
+            turnon4.SetActive(false);
             catPoster.material = CatPosterOrig;          
         }        
     }
