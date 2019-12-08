@@ -13,6 +13,14 @@ public class HeadSphereControl : MonoBehaviour
     public GameObject turnon3;
     public GameObject turnoff4;
     public GameObject turnon4;
+    public GameObject handOFF;
+    public GameObject handON;
+    public GameObject grandmaON;
+    public GameObject grandmaOFF;
+    public GameObject grandmaON2;
+    public GameObject grandmaOFF2;
+    public GameObject labManualON;
+    public GameObject labManualOFF;
     public Renderer catPoster;
     public Material CatPosterOrig;
     public Material CatPosterNew;
@@ -26,11 +34,11 @@ public class HeadSphereControl : MonoBehaviour
     {
         if (Input.GetKeyDown("o"))
         {
-            InflateSphere();      
+           // InflateSphere();      
         }      
         if (Input.GetKeyDown("p"))
         {
-            CollapseSphere();   
+           // CollapseSphere();   
         }     
     }
     public void CollapseSphere()
@@ -75,21 +83,36 @@ public class HeadSphereControl : MonoBehaviour
             turnoff2.SetActive(false);
             turnoff3.SetActive(false);
             turnoff4.SetActive(false);
+            handOFF.SetActive(false);
+            grandmaON.SetActive(false);
+            grandmaON2.SetActive(false);
+            grandmaOFF.SetActive(true);
+            grandmaOFF2.SetActive(true);
             turnon1.SetActive(true);
             turnon2.SetActive(true); 
             turnon3.SetActive(true);
             turnon4.SetActive(true);
-
+            handON.SetActive(true);
+            labManualON.SetActive(false);
+            labManualOFF.SetActive(true);
             catPoster.material = CatPosterNew;
         }else{
             turnoff1.SetActive(true);
             turnoff2.SetActive(true);
             turnoff3.SetActive(true);
             turnoff4.SetActive(true);
+            handOFF.SetActive(true);
+            grandmaON.SetActive(true);
+            grandmaON2.SetActive(true);
+            grandmaOFF.SetActive(false);
+            grandmaOFF2.SetActive(false);
             turnon1.SetActive(false);
             turnon2.SetActive(false); 
             turnon3.SetActive(false);  
             turnon4.SetActive(false);
+            handON.SetActive(false);
+            labManualON.SetActive(true);
+            labManualOFF.SetActive(false);
             catPoster.material = CatPosterOrig;          
         }        
     }

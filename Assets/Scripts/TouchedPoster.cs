@@ -5,12 +5,15 @@ using UnityEngine;
 public class TouchedPoster : MonoBehaviour
 {
 
-    public Animation anim;
+    private Animator anim;
+    public GameObject paperSheet;
+    public GameObject spawnPoint;
+    public bool playedOnce;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animation>();
+        anim = GetComponent<Animator>();
 
         
     }
@@ -23,7 +26,30 @@ public class TouchedPoster : MonoBehaviour
 
     public void Touched()
     {
-        anim.Play();
+        anim.Play("PosterTouched");
         Debug.Log("Poster Touched");
+    }
+  /* public void OnTriggerEnter(Collision other)
+   {
+       if(other.gameObject.tag != "Glasszone")
+       {
+           anim.Play("PosterTouched");
+       }
+   }*/
+
+   void OnTriggerEnter(Collider otherobj)
+    {
+        if (otherobj.gameObject.CompareTag("Glasszone"))
+        {
+            Debug.Log("Hit from glasses");
+        }else
+        {
+            if(playedOnce == false)
+            {
+            anim.Play("PosterTouched");  
+            Instantiate (paperSheet, spawnPoint.transform.position, this.transform.rotation); 
+            playedOnce = true; 
+            }        
+        }
     }
 }

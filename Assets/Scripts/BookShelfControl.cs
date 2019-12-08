@@ -4,6 +4,8 @@ using System.Collections;
 public class BookShelfControl : MonoBehaviour
 {
     public Animator anim;
+    public Animator anim2;
+    public GameObject audioSound;
 
     void Start()
     {
@@ -23,6 +25,8 @@ public class BookShelfControl : MonoBehaviour
     public void RetractBookShelf()
         {
         anim.Play("BookShelfRetract"); 
+        audioSound.SetActive(true);
+        anim2.Play("DoorIdle");
         }  
 }
 
