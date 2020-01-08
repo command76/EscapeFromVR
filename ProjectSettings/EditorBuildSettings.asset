@@ -5,13 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/lab1farmtut.unity
-    guid: 9765197fc61d09d48aeb4a808f433e5b
-  - enabled: 0
-    path: Assets/Scenes/Kimball_VRLab1Complete.unity
-    guid: 0f7fa8163d54ac64899a367739d24b0a
   - enabled: 1
-    path: Assets/Scenes/SkillsTest.unity
-    guid: c26d49ff4d3428f44b3fcc5ff6987cc2
+    path: Assets/Scenes/gameplayscene.unity
+    guid: 2f8163b385e0c4448bdf303d6babffa1
   m_configObjects: {}
